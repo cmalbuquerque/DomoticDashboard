@@ -1,0 +1,13 @@
+c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\bin\Debug\Aula01.exe.config
+c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\bin\Debug\Aula01.exe
+c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\bin\Debug\Aula01.pdb
+c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\obj\Debug\Aula01.csprojResolveAssemblyReference.cache
+c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\obj\Debug\MainWindow.baml
+c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\obj\Debug\MainWindow.g.cs
+c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\obj\Debug\App.g.cs
+c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\obj\Debug\Aula01_MarkupCompile.cache
+c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\obj\Debug\Aula01.g.resources
+c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\obj\Debug\Aula01.Properties.Resources.resources
+c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\obj\Debug\Aula01.csproj.GenerateResource.Cache
+c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\obj\Debug\Aula01.exe
+c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\obj\Debug\Aula01.pdb
