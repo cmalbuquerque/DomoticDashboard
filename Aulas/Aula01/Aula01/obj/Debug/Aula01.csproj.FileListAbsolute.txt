@@ -11,3 +11,17 @@ c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01
 c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\obj\Debug\Aula01.csproj.GenerateResource.Cache
 c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\obj\Debug\Aula01.exe
 c:\users\gonzaloconcepcionme\documents\visual studio 2013\Projects\Aula01\Aula01\obj\Debug\Aula01.pdb
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\bin\Debug\Aula01.exe.config
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\bin\Debug\Aula01.exe
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\bin\Debug\Aula01.pdb
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\obj\Debug\Aula01.csprojResolveAssemblyReference.cache
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\obj\Debug\MainWindow.baml
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\obj\Debug\MainWindow.g.cs
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\obj\Debug\App.g.cs
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\obj\Debug\Aula01_MarkupCompile.cache
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\obj\Debug\Aula01.g.resources
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\obj\Debug\Aula01.Properties.Resources.resources
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\obj\Debug\Aula01.csproj.GenerateResource.cache
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\obj\Debug\Aula01.csproj.CoreCompileInputs.cache
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\obj\Debug\Aula01.exe
+C:\Users\GonzaloConcepciónMeg\Desktop\ihc2018\Aulas\Aula01\Aula01\obj\Debug\Aula01.pdb
