@@ -38,6 +38,10 @@
       document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
     }
 
+    function activateAlarm(){
+      
+    }
+
  </script>
 
 </head>
@@ -115,8 +119,7 @@
       </a>
       </div>
       <div class="col-12 col-lg-4">
-        <a href="alarms.html">
-        <div class="card features">
+        <div class="card features" onclick="activateAlarm()">
           <div class="card-body">
             <div class="media">
               <span class="ti-bell gradient-fill ti-3x mr-3"></span>
@@ -127,7 +130,6 @@
             </div>
           </div>
         </div>
-      </a>
       </div>
       <div class="col-12 col-lg-4">
        <a class="weatherwidget-io" href="https://forecast7.com/en/41d16n8d63/porto/" data-label_1="PORTO" data-days="5" data-theme="clear" >PORTO</a>

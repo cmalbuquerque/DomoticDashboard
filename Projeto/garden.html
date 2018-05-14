@@ -9,6 +9,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
   <!-- Themify Icons -->
   <link rel="stylesheet" href="css/themify-icons.css">
   <!-- Main css -->
@@ -17,11 +18,21 @@
   <!-- jQuery and Bootstrap -->
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap-auto-dismiss-alert.js"></script>
   <script src="js/owl.carousel.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+
   <!-- Custom JS -->
   <script src="js/script.js"></script>
 
+  <script type="text/javascript" src="../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="../js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
   <script type="text/javascript">
+
+
     function showHideSideBar() {
       var x = document.getElementById("sideBar");
       if (x.style.display === "none") {
@@ -30,7 +41,39 @@
         x.style.display = "none";
       }
     } 
+
+    function showAlert(){
+      var x = document.getElementById("lockInfo");
+          if (x.style.display === "none") {
+                x.style.display = "block";
+          } else {
+                x.style.display = "none";
+          }
+    }
+
+    function showAlertUnlock(){
+      var x = document.getElementById("unlockInfo");
+          if (x.style.display === "none") {
+                x.style.display = "block";
+          } else {
+                x.style.display = "none";
+          }
+    }
+
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+
+    $('.form_time').datetimepicker({
+      language:  'en',
+      weekStart: 1,
+      todayBtn:  1,
+      autoclose: 1,
+      todayHighlight: 1,
+      startView: 1,
+      minView: 0,
+      maxView: 1,
+      forceParse: 0
+    });
+
   </script>
 
 </head>
@@ -84,6 +127,7 @@
   </nav>
 
   <div class="container" style="margin-top: 2%">
+    <h3 align="center">Garden</h3>
     <ul class="nav nav-tabs nav-justified" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" data-toggle="tab" href="#lightsGarden">Lights</a>
@@ -95,63 +139,159 @@
         <a class="nav-link" data-toggle="tab" href="#doors">Doors</a>
       </li>
     </ul>
+
     <div class="tab-content">
+      <!-- Tab Page -->
+
       <div class="tab-pane fade show active" id="lightsGarden">
-          <h5>Garden's Lights Control</h5>
-          <div class="d-flex flex-column flex-lg-row">
+        <h5>Garden's Lights Control</h5>
+        <div class="d-flex flex-column flex-lg-row">
           <p style="font-size: large;">All Lights &nbsp;&nbsp;</p>
           <label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
           </label> 
         </div>
-        <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    List of lights
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Entrace Gate Light</a>
-    <a class="dropdown-item" href="#">Garage Gate Light</a>
-    <a class="dropdown-item" href="#">Barbecue Light</a>
-    <a class="dropdown-item" href="#">Entrace Door Light</a>
-  </div>
-</div>
-      </div>
-      <div class="tab-pane fade" id="irrigation">
+
         <div class="d-flex flex-column flex-lg-row">
-          <div>
-            <h2>Scheduling when you want</h2>
-            <p class="lead">Uniquely underwhelm premium outsourcing with proactive leadership skills. </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla
-              congue tincidunt ac a nibh. Mauris accumsan pulvinar lorem placerat volutpat. Praesent quis facilisis elit. Sed condimentum neque quis ex porttitor,
-            </p>
-            <p> malesuada faucibus augue aliquet. Sed elit est, eleifend sed dapibus a, semper a eros. Vestibulum blandit vulputate pharetra. Phasellus lobortis leo a nisl euismod, eu faucibus justo sollicitudin. Mauris consectetur, tortor
-              sed tempor malesuada, sem nunc porta augue, in dictum arcu tortor id turpis. Proin aliquet vulputate aliquam.
-            </p>
+          <div class="form-group col-lg-5">
+            <label for="exampleFormControlSelect2">List of Lights</label>
+            <select multiple class="form-control" id="exampleFormControlSelect2">
+              <option>Entrace Gate Light</option>
+              <option>Garage Gate Light</option>
+              <option>Barbecue Light</option>
+              <option>Entrace Door Light</option>
+            </select>
+
+            <p style="font-size: large;">Status &nbsp;&nbsp;</p>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+
+            <p style="font-size: large;">Mode &nbsp;&nbsp;</p>
+            <div class="form-check d-flex flex-column flex-lg-row">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+              <label class="form-check-label" for="exampleRadios1">
+                Normal
+              </label>
+            </div>
+            <div class="form-check d-flex flex-column flex-lg-row">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+              <label class="form-check-label" for="exampleRadios2">
+                Warm
+              </label>
+            </div>
+            <div class="form-check d-flex flex-column flex-lg-row">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+              <label class="form-check-label" for="exampleRadios1">
+                Cold
+              </label>
+            </div>
+            <p style="font-size: large;">Intensity &nbsp;&nbsp;</p>
+            <input type="range" class="form-control-range">
           </div>
-          <img src="images/graphic.png" alt="graphic" class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
+
+
+
+        </div>
+
+      </div>
+
+      <!-- Tab Page -->
+      <div class="tab-pane fade" id="irrigation">
+        <h5>Irrigation Control</h5>
+        <div class="d-flex flex-column flex-lg-row">        
+          <p style="font-size: large;">On/Off &nbsp;&nbsp;</p>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="d-flex flex-column flex-lg-row">
+          <p style="font-size: large;">Automatic Irrigation &nbsp;&nbsp;</p>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="d-flex flex-column flex-lg-row">
+          <div class="checkbox">
+              <label><input type="checkbox" value="">&nbsp;Monday</label>
+          </div>
+          <div class="checkbox">
+              <label><input type="checkbox" value="">&nbsp;Tuesday</label>
+          </div>
+          <div class="checkbox">
+              <label><input type="checkbox" value="">&nbsp;Wednesday</label>
+          </div>
+          <div class="checkbox">
+              <label><input type="checkbox" value="">&nbsp;Thursday</label>
+          </div>
+          <div class="checkbox">
+              <label><input type="checkbox" value="">&nbsp;Friday</label>
+          </div>
+
+          <div class="checkbox">
+              <label><input type="checkbox" value="">&nbsp;Saturday</label>
+          </div> 
+          <div class="checkbox">
+              <label><input type="checkbox" value="">&nbsp;Sunday</label>
+          </div> 
+        </div>
+
+
+        <div class="d-flex flex-column flex-lg-row">
+          <fieldset>
+            <div class="form-group">
+              <p>Start Time</p>
+              <div class="input-group date form_time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
+                <input class="form-control" type="time">
+                <span class="input-group-addon"><span class="ti ti-time"></span></span>
+              </div>
+
+              <p>End Time</p>
+              <div class="input-group date form_time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
+                <input class="form-control" type="time" >
+                <span class="input-group-addon"><span class="ti ti-time"></span></span>
+              </div>
+              <input type="hidden" id="dtp_input3" value="" /><br/>
+            </div>
+          </fieldset>
+
         </div>
       </div>
+
+
+
+
       <div class="tab-pane fade" id="doors">
-        <div class="d-flex flex-column flex-lg-row">
-          <img src="images/graphic.png" alt="graphic" class="img-fluid rounded align-self-start mr-lg-5 mb-5 mb-lg-0">
-          <div>
-            <h2>Realtime Messaging service</h2>
-            <p class="lead">Uniquely underwhelm premium outsourcing with proactive leadership skills. </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum, urna eu pellentesque pretium, nisi nisi fermentum enim, et sagittis dolor nulla vel sapien. Vestibulum sit amet mattis ante. Ut placerat dui eu nulla
-              congue tincidunt ac a nibh. Mauris accumsan pulvinar lorem placerat volutpat. Praesent quis facilisis elit. Sed condimentum neque quis ex porttitor,
-            </p>
-            <p> malesuada faucibus augue aliquet. Sed elit est, eleifend sed dapibus a, semper a eros. Vestibulum blandit vulputate pharetra. Phasellus lobortis leo a nisl euismod, eu faucibus justo sollicitudin. Mauris consectetur, tortor
-              sed tempor malesuada, sem nunc porta augue, in dictum arcu tortor id turpis. Proin aliquet vulputate aliquam.
-            </p>
+        <h5>Doors Control</h5>
+        <div class="d-flex flex-column flex-lg-row" style="margin-top: 1%; margin-bottom: 1%">        
+          <p style="font-size: large;">All Doors &nbsp;&nbsp;</p>
+          <button onclick="showAlert()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-lock gradient-fill ti-3x mr-3"></span>Lock</button> 
+          <button onclick="showAlertUnlock()" style="border: none;" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-unlock gradient-fill ti-3x mr-3"></span>Unlock</button> 
+          <div id="lockInfo" class="alert alert-success" role="alert" style="margin-left: 4%; display: none">
+            <strong>Success! </strong>All doors are locked!
+            <a data-dismiss="alert"><span class=ti-close></span></a>
           </div>
+          <div id="unlockInfo" class="alert alert-warning" role="alert" style="margin-left: 4%; display: none">
+            <strong>Warning! </strong>All doors are unlocked!
+            <a data-dismiss="alert"><span class=ti-close></span></a>
+          </div>
+        </div>
+        <div class="form-group col-lg-7">
+          <label for="exampleFormControlSelect2">List of Doors</label>
+          <select multiple class="form-control" id="exampleFormControlSelect2">
+            <option>Entrace Gate</option>
+            <option>Garage Gate</option>
+            <option>Entrace Door</option>
+          </select>
         </div>
       </div>
     </div>
 
 
   </div>
-
-
 </body>
 </html>
