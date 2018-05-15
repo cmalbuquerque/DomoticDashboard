@@ -19,9 +19,19 @@
   <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
   <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 
+<<<<<<< HEAD
+  <!-- jQuery and Bootstrap -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap-auto-dismiss-alert.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+=======
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+>>>>>>> 761e23d08c92172dae26e2b149927e19094c1a0e
 
   <script type="text/javascript">
     function showHideSideBar() {
@@ -33,6 +43,79 @@
       }
     } 
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+<<<<<<< HEAD
+
+
+    var id = 1; // unique id for list items
+
+    $(document).ready(function(e) {
+      editButton();
+
+      $("tbody").on("click", ".cross", function() {
+        $(this).closest("tr").remove();
+      });
+
+      $("button").on("click", getInput);
+
+      $("tbody").on("click", ".box", function() {
+        $(this).closest("tr").find("span").toggleClass("checked");
+      });
+
+    });
+
+    // triggered on Enter
+    $(document).on("keydown", function(e) {
+      if(e.keyCode === 13) {
+        getInput();
+      }
+    });
+
+
+
+
+    // Toggle delete icon when edit button is clicked
+    function editButton() {
+      $(".edit").on("click", "span", function() {
+        $(".cross").toggle();
+      });
+    }
+
+
+    // Obtaining customer input and then calling addItem() with the input
+    function getInput() {
+      var custInput = $(".custinput");
+      var input = custInput.val();
+
+      if ((input !== "") && ($.trim(input) !== "")) {
+        addItem(input);
+        custInput.val("");
+      }
+    }
+
+
+  /******************************************************************************
+    adding item to the list
+    increment id counter for unique id
+    *******************************************************************************/
+    function addItem(message) {
+
+    $(".cross").hide(); // hiding the delete icon
+
+    // var checkbox = "<td class=\"check\">" + "<input type=\"checkbox\" id=\"item" + id + "\" class=\"box\">" + "<label for=\"item" + id + "\" class=\"check-label\"></label></td>";
+
+    var content = "<td class=\"content\"><span>" + message + "&nbsp;&nbsp;</span></td>";
+
+    var qt = "<td><span><input class=\"col-lg-3\" type=\"text\" value=\"1\"></span></td>";
+
+    var delIcon = "<td><span class=\"ti-close cross\" alt=\"cross\"></span></td>";
+
+    $("tbody").append("<tr>" + content + qt + delIcon + "</tr>");
+
+    id++;
+  }
+
+</script>
+=======
   
   function addRow() {
     var table = document.getElementById("tab_logic");
@@ -46,6 +129,7 @@
 }
   
   </script>
+>>>>>>> 761e23d08c92172dae26e2b149927e19094c1a0e
 
 </head>
 
@@ -101,6 +185,45 @@
     <h3 align="center">Shopping List</h3>
     <ul class="nav nav-tabs nav-justified" role="tablist">
     </ul>
+<<<<<<< HEAD
+
+
+    <div class="input" style="margin-top: 2%; margin-bottom: 2%; text-align: center">
+      <input type="text" class="custinput" id="item-input" placeholder="Enter shopping item" autofocus>
+      <button type="submit" id="addRow" class="btn btn-primary"><span class="ti-plus"></span>&nbsp;Add Item</button>
+    </div>
+
+    <div class="container">
+      <table id="mt" class="table table-hover">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th class="edit"><span>Remove</span></th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+      <div id="context-menu">
+        <ul class="dropdown-menu" role="menu">
+          <li><a tabindex="-1">Action</a></li>
+          <li><a tabindex="-1">Another action</a></li>
+          <li><a tabindex="-1">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a tabindex="-1">Separated link</a></li>
+        </ul>
+      </div>
+      <br>
+    </div>
+
+
+    
+</div>
+
+
+=======
 	
 	<!-- Table -->
 	
@@ -144,6 +267,7 @@
    </div>
    
   
+>>>>>>> 761e23d08c92172dae26e2b149927e19094c1a0e
 
 </body>
 </html>

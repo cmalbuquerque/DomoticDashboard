@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="css/themify-icons.css">
   <!-- Main css -->
   <link href="css/style.css" rel="stylesheet">
+  <!-- jQuery and Bootstrap -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap-auto-dismiss-alert.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
 
   <script type="text/javascript">
     function showHideSideBar() {
@@ -23,6 +28,24 @@
         x.style.display = "none";
       }
     } 
+
+    function showAlert(){
+      var x = document.getElementById("lockInfo");
+          if (x.style.display === "none") {
+                x.style.display = "block";
+          } else {
+                x.style.display = "none";
+          }
+    }
+
+    function showAlertUnlock(){
+      var x = document.getElementById("unlockInfo");
+          if (x.style.display === "none") {
+                x.style.display = "block";
+          } else {
+                x.style.display = "none";
+          }
+    }
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
   </script>
 
@@ -79,13 +102,25 @@
   <!-- Content -->
 
   <div class="container" style="margin-top: 2%">
-    
+
     <h3 style="margin-left: 2%">Doors Control</h3>
+    <div class="d-flex flex-column flex-lg-row" style="margin-top: 1%; margin-bottom: 1%; margin-left:2%">        
+      <p style="font-size: large;">All Doors &nbsp;&nbsp;</p>
+      <button onclick="showAlert()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-lock gradient-fill ti-3x mr-3"></span>Lock</button> 
+      <button onclick="showAlertUnlock()" style="border: none;" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-unlock gradient-fill ti-3x mr-3"></span>Unlock</button> 
+      <div id="lockInfo" class="alert alert-success" role="alert" style="margin-left: 4%; display: none">
+        <strong>Success! </strong>All doors are locked!
+        <a data-dismiss="alert"><span class=ti-close></span></a>
+      </div>
+      <div id="unlockInfo" class="alert alert-warning" role="alert" style="margin-left: 4%; display: none">
+        <strong>Warning! </strong>All doors are unlocked!
+        <a data-dismiss="alert"><span class=ti-close></span></a>
+      </div>
+    </div>
 
+    <div>
 
-   <div>
-    
-   </div>
+    </div>
 
 
   </div>
