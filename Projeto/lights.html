@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="css/themify-icons.css">
   <!-- Main css -->
   <link href="css/style.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
 
   <script type="text/javascript">
     function showHideSideBar() {
@@ -29,15 +32,16 @@
 </head>
 
 <body>       
-  <!-- Nav Menu -->
+   <!-- Nav Menu -->
 
-  <div class="nav-menu" style="background-color: black;">
+  <div class="nav-menu" style="background-color: #f2f2f2" >
+
     <button onclick="showHideSideBar()" style="border: none" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3"><span class="ti-menu gradient-fill ti-3x mr-3"></span></button>
-    <button style="border: none; background-color: black" class="btn my-3 my-sm-0 ml-lg-3"><a href="index.html" class="ti-home gradient-fill ti-3x mr-3"></a></button> 
-    <button style="float: right; border: none; background-color: black" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-settings gradient-fill ti-3x mr-3" href="settings.html"></a></button> 
-    <button style="float: right; border: none; background-color: black" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-bell gradient-fill ti-3x mr-3"></a></button> 
+    <button style="border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a href="index.html" class="ti-home gradient-fill ti-3x mr-3"></a></button> 
+    <b id="date" value="getDate"  style="color:white"></b>
+    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-settings gradient-fill ti-3x mr-3" href="settings.html"></a></button> 
+    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-bell gradient-fill ti-3x mr-3"></a></button> 
   </div>
-
 
   <!-- Side Bar -->
 
@@ -50,10 +54,10 @@
         <a class="nav-link" href="lights.html"><span class="ti-light-bulb"></span>  Lights Control</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="climate.html"><span class="ti-light-bulb"></span>  Climate Control</a>
+        <a class="nav-link" href="climate.html"><i class="fa fa-thermometer-half gradient-fill"></i>  Climate Control</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="garden.html"><span class="ti-stats-up"></span>  Garden</a>
+        <a class="nav-link" href="garden.html"><i class="fa fa-leaf gradient-fill"></i>  Garden</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="alarms.html"><span class="ti-bell"></span>  Alarms</a>

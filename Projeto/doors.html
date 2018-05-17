@@ -54,13 +54,12 @@
 <body>       
   <!-- Nav Menu -->
 
-  <div class="nav-menu" style="background-color: black;">
+  <div class="nav-menu" style="background-color: #f2f2f2">
     <button onclick="showHideSideBar()" style="border: none" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3"><span class="ti-menu gradient-fill ti-3x mr-3"></span></button>
-    <button style="border: none; background-color: black" class="btn my-3 my-sm-0 ml-lg-3"><a href="index.html" class="ti-home gradient-fill ti-3x mr-3"></a></button> 
-    <button style="float: right; border: none; background-color: black" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-settings gradient-fill ti-3x mr-3" href="settings.html"></a></button> 
-    <button style="float: right; border: none; background-color: black" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-bell gradient-fill ti-3x mr-3"></a></button> 
+    <button style="border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a href="index.html" class="ti-home gradient-fill ti-3x mr-3"></a></button> 
+    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-settings gradient-fill ti-3x mr-3" href="settings.html"></a></button> 
+    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-bell gradient-fill ti-3x mr-3"></a></button> 
   </div>
-
 
   <!-- Side Bar -->
 
@@ -101,24 +100,54 @@
 
   <!-- Content -->
 
-  <div class="container" style="margin-top: 2%">
+  <div class="container" style="margin-top: 2%; font-size: large;">
 
     <h3 style="margin-left: 2%">Doors Control</h3>
-    <div class="d-flex flex-column flex-lg-row" style="margin-top: 1%; margin-bottom: 1%; margin-left:2%">        
-      <p style="font-size: large;">All Doors &nbsp;&nbsp;</p>
+    <div class="d-flex flex-column flex-lg-row" style="margin-top: 3%; margin-bottom: 3%; margin-left:2%;">        
+      <p style="font-size: x-large;">All Doors &nbsp;&nbsp;</p>
       <button onclick="showAlert()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-lock gradient-fill ti-3x mr-3"></span>Lock</button> 
       <button onclick="showAlertUnlock()" style="border: none;" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-unlock gradient-fill ti-3x mr-3"></span>Unlock</button> 
       <div id="lockInfo" class="alert alert-success" role="alert" style="margin-left: 4%; display: none">
-        <strong>Success! </strong>All doors are locked!
+        <strong></strong>All doors are locked!
         <a data-dismiss="alert"><span class=ti-close></span></a>
       </div>
       <div id="unlockInfo" class="alert alert-warning" role="alert" style="margin-left: 4%; display: none">
-        <strong>Warning! </strong>All doors are unlocked!
+        <strong></strong>All doors are unlocked!
         <a data-dismiss="alert"><span class=ti-close></span></a>
       </div>
     </div>
 
-    <div>
+    <div class="container" style="margin-top: 2%">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Door</th>
+            <th scope="col">Hour</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Entrace</th>
+            <td>8:23</td>
+            <td id="statusEntrace">Unlocked</td>
+            <td><span class="ti-lock"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Garage Gate</th>
+            <td>9:10</td>
+            <td>Locked</td>
+            <td><span class="ti-unlock"></span></td>
+          </tr>
+          <tr>
+            <th scope="row">Entrace Gate</th>
+            <td>9:10</td>
+            <td>Locked</td>
+            <td><span class="ti-unlock"></span></td>
+          </tr>
+        </tbody>
+      </table>
 
     </div>
 

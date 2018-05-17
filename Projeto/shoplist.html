@@ -13,13 +13,9 @@
   <link rel="stylesheet" href="css/themify-icons.css">
   <!-- Main css -->
   <link href="css/style.css" rel="stylesheet">
+  <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   
-  <!-- Table adds -->
-  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-  <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
-  <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
-
-<<<<<<< HEAD
   <!-- jQuery and Bootstrap -->
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
@@ -27,11 +23,6 @@
   <script src="js/owl.carousel.min.js"></script>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-=======
-
-
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
->>>>>>> 761e23d08c92172dae26e2b149927e19094c1a0e
 
   <script type="text/javascript">
     function showHideSideBar() {
@@ -43,7 +34,7 @@
       }
     } 
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-<<<<<<< HEAD
+
 
 
     var id = 1; // unique id for list items
@@ -115,34 +106,22 @@
   }
 
 </script>
-=======
-  
-  function addRow() {
-    var table = document.getElementById("tab_logic");
-    var row = table.insertRow(-1);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    cell1.innerHTML = "NEW CELL1";
-    cell2.innerHTML = "NEW CELL2";
-    cell3.innerHTML = "NEW CELL3";
-}
-  
-  </script>
->>>>>>> 761e23d08c92172dae26e2b149927e19094c1a0e
+
+</script>
 
 </head>
 
 <body>       
-  <!-- Nav Menu -->
+    <!-- Nav Menu -->
 
-  <div class="nav-menu" style="background-color: black;">
+  <div class="nav-menu" style="background-color: #f2f2f2" >
+
     <button onclick="showHideSideBar()" style="border: none" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3"><span class="ti-menu gradient-fill ti-3x mr-3"></span></button>
-    <button style="border: none; background-color: black" class="btn my-3 my-sm-0 ml-lg-3"><a href="index.html" class="ti-home gradient-fill ti-3x mr-3"></a></button> 
-    <button style="float: right; border: none; background-color: black" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-settings gradient-fill ti-3x mr-3" href="settings.html"></a></button> 
-    <button style="float: right; border: none; background-color: black" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-bell gradient-fill ti-3x mr-3"></a></button> 
+    <button style="border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a href="index.html" class="ti-home gradient-fill ti-3x mr-3"></a></button> 
+    <b id="date" value="getDate"  style="color:white"></b>
+    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-settings gradient-fill ti-3x mr-3" href="settings.html"></a></button> 
+    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-bell gradient-fill ti-3x mr-3"></a></button> 
   </div>
-
 
   <!-- Side Bar -->
 
@@ -155,10 +134,10 @@
         <a class="nav-link" href="lights.html"><span class="ti-light-bulb"></span>  Lights Control</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="climate.html"><span class="ti-light-bulb"></span>  Climate Control</a>
+        <a class="nav-link" href="climate.html"><i class="fa fa-thermometer-half gradient-fill"></i>  Climate Control</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="garden.html"><span class="ti-stats-up"></span>  Garden</a>
+        <a class="nav-link" href="garden.html"><i class="fa fa-leaf gradient-fill"></i>  Garden</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="alarms.html"><span class="ti-bell"></span>  Alarms</a>
@@ -185,7 +164,6 @@
     <h3 align="center">Shopping List</h3>
     <ul class="nav nav-tabs nav-justified" role="tablist">
     </ul>
-<<<<<<< HEAD
 
 
     <div class="input" style="margin-top: 2%; margin-bottom: 2%; text-align: center">
@@ -220,54 +198,10 @@
 
 
     
-</div>
-
-
-=======
-	
-	<!-- Table -->
-	
-	<div class="container">
-    <div class="row clearfix">
-    	<div class="col-md-12 table-responsive">
-			<table class="table table-bordered table-hover table-sortable" id="tab_logic">
-				<thead>
-					<tr >
-						<th class="text-center">
-							Product
-						</th>
-						<th class="text-center">
-							Quantity
-						</th>
-        				<th class="text-center" style="border-top: 1px solid #ffffff; border-right: 1px solid #ffffff;">
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-    				<tr id='addr0' data-id="0" class="hidden">
-						<td data-name="name">
-						    <input type="text" name='name0'  placeholder='Name' class="form-control"/>
-						</td>
-						<td data-name="quantity">
-					        <input type="number" value="1" min="0" max="99" class="qtyinput">
-						</td>
-                        <td data-name="del">
-                            <button nam"del0" class='btn btn-danger glyphicon glyphicon-remove row-remove'></button>
-                        </td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<button onclick="addRow()">Add product</button>
-	
-	<input type="button" class="btn btn-lg btn-block " id="addrow" value="Add Row" />
-</div>
-	
-   </div>
-   
+  </div>
   
->>>>>>> 761e23d08c92172dae26e2b149927e19094c1a0e
+</div>
+
 
 </body>
 </html>
