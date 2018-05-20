@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="css/themify-icons.css">
   <!-- Main css -->
   <link href="css/style.css" rel="stylesheet">
-     <!-- Font Awesome -->
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   
   <!-- jQuery and Bootstrap -->
   <script src="js/jquery-3.2.1.min.js"></script>
@@ -23,6 +23,13 @@
   <script src="js/owl.carousel.min.js"></script>
 
   <script type="text/javascript">
+
+    n =  new Date();
+  y = n.getFullYear();
+  m = n.getMonth() + 1;
+  d = n.getDate();
+  document.getElementById("date").value = m + "/" + d + "/" + y;
+
     function showHideSideBar() {
       var x = document.getElementById("sideBar");
       if (x.style.display === "none") {
@@ -32,58 +39,163 @@
       }
     } 
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+
+    function showHideallRoomsDiv() {
+      var x = document.getElementById("inputTemp");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+      var y = document.getElementById("defTempMinus");
+      if (y.style.display === "none") {
+        y.style.display = "block";
+      } else {
+        y.style.display = "none";
+      }
+      var z = document.getElementById("defTempPlus");
+      if (z.style.display === "none") {
+        z.style.display = "block";
+      } else {
+        z.style.display = "none";
+      }
+
+    } 
+    $(document).on('click', '.number-spinner button', function () {    
+      var btn = $(this),
+      oldValue = btn.closest('.number-spinner').find('input').val().trim(),
+      newVal = 0;
+
+      if (btn.attr('data-dir') == 'up') {
+        newVal = parseInt(oldValue) + 1;
+      } else {
+        if (oldValue > 1) {
+          newVal = parseInt(oldValue) - 1;
+        } else {
+          newVal = 1;
+        }
+      }
+      btn.closest('.number-spinner').find('input').val(newVal);
+    });
   </script>
 
+  <style>
+  div.left{float:left; width:30%;}
+  div.right{float:left; width:60%; margin-left: 2%}
+
+</style>
 </head>
 
 <body>       
-   <!-- Nav Menu -->
+ <!-- Nav Menu -->
 
-  <div class="nav-menu" style="background-color: #f2f2f2" >
+ <div class="nav-menu" style="background-color: #f2f2f2" >
 
-    <button onclick="showHideSideBar()" style="border: none" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3"><span class="ti-menu gradient-fill ti-3x mr-3"></span></button>
-    <button style="border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a href="index.html" class="ti-home gradient-fill ti-3x mr-3"></a></button> 
-    <b id="date" value="getDate"  style="color:white"></b>
-    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-settings gradient-fill ti-3x mr-3" href="settings.html"></a></button> 
-    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-bell gradient-fill ti-3x mr-3"></a></button> 
+  <button onclick="showHideSideBar()" style="border: none" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3"><span class="ti-menu gradient-fill ti-3x mr-3"></span></button>
+  <button style="border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a href="index.html" class="ti-home gradient-fill ti-3x mr-3"></a></button> 
+  <button id="date" style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"></b>
+  <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-settings gradient-fill ti-3x mr-3" href="settings.html"></a></button> 
+  <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-info gradient-fill ti-3x mr-3"></a></button> 
+</div>
+
+<!-- Side Bar -->
+
+<nav id="sideBar" class="navbar bg-light" style="width: 10%; position: absolute; display: none;">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="statistics.html"><span class="ti-stats-up"></span>  Statistics</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="lights.html"><span class="ti-light-bulb"></span>  Lights Control</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="climate.html"><i class="fa fa-thermometer-half gradient-fill"></i>  Climate Control</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="garden.html"><i class="fa fa-leaf gradient-fill"></i>  Garden</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="alarms.html"><span class="ti-bell"></span>  Alarms</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="cameras.html"><span class="ti-video-camera"></span>  Security Cameras</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="doors.html"><span class="ti-lock"></span>  Doors</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="blinds.html"><span class="ti-layout-grid2-alt"></span>  Blinds Control</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="shoplist.html"><span class="ti-notepad"></span>  Shopping List</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="settings.html"><span class="ti-settings"></span>  Settings</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container" style="margin-top: 2%;">
+
+  <h3 style="margin-bottom: 3%">Climate Control</h3>
+
+  <div class="right" style="margin-left: 3%">
+    <div class="row">
+      <h4 class="text-primary" style=" font-size: x-large; float: left;">List off all rooms</h4>
+    </div>
+    <div class="row">
+      <select multiple class="form-control" size="10" style="font-size: large; width: 40%">
+        <option>Kitchen</option>
+        <option>Living Room</option>
+        <option>Dinning Room</option>
+        <option>Entrace</option>
+        <option>Bathroom 1st floor</option>
+        <option>Bathroom Kids</option>
+        <option>Bathroom Suite</option>
+        <option>Bedroom Kids</option>
+        <option>Suite</option>
+        <option>Office</option>
+      </select>
+      <div class="input-group number-spinner" style="width: 40%; margin-left: 4%; font-size: xx-large;">
+            <span class="input-group-btn">
+              <button style="font-size: xx-large;" class="btn btn-primary" data-dir="dwn"><span class="ti-minus"></span></button>
+            </span>
+            <input style="font-size: xx-large;" type="text" class="form-control text-center" value="18">
+            <span class="input-group-btn">
+              <button style="font-size: xx-large;" class="btn btn-primary" data-dir="up"><span class="ti-plus"></span></button>
+            </span>
+          </div>
+    </div>
+
   </div>
 
-  <!-- Side Bar -->
+  <div class="left">
+    <div class="row">
+      <h4 class="text-primary" style=" font-size: x-large; float: left; margin-left: 3%">Temperature for all rooms</h4>
+      <label class="switch" onchange="showHideallRoomsDiv()" style="margin-left: 3%">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+      <br></br>
+      <div class="card pricing popular" id="allRoomsDiv" style="margin-left: 3%">
+        <div class="card-head">
+          <div class="input-group number-spinner" style="width: 80%; margin-left: 10%;">
+            <span class="input-group-btn">
+              <button  style="display: none;" id="defTempMinus" class="btn btn-default" data-dir="dwn"><span class="ti-minus"></span></button>
+            </span>
+            <input style="display: none;" id="inputTemp" type="text" class="form-control text-center" value="18">
+            <span class="input-group-btn">
+              <button  style="display: none;" id="defTempPlus" class="btn btn-default" data-dir="up"><span class="ti-plus"></span></button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <nav id="sideBar" class="navbar bg-light" style="width: 10%; position: absolute; display: none;">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="statistics.html"><span class="ti-stats-up"></span>  Statistics</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="lights.html"><span class="ti-light-bulb"></span>  Lights Control</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="climate.html"><i class="fa fa-thermometer-half gradient-fill"></i>  Climate Control</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="garden.html"><i class="fa fa-leaf gradient-fill"></i>  Garden</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="alarms.html"><span class="ti-bell"></span>  Alarms</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="cameras.html"><span class="ti-video-camera"></span>  Security Cameras</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="doors.html"><span class="ti-lock"></span>  Doors</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="blinds.html"><span class="ti-layout-grid2-alt"></span>  Blinds Control</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="shoplist.html"><span class="ti-notepad"></span>  Shopping List</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="settings.html"><span class="ti-settings"></span>  Settings</a>
-      </li>
-    </ul>
-  </nav>
+  
+
+</div>
 
 </body>
 </html>
