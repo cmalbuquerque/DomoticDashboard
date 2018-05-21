@@ -16,6 +16,11 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+
+  <script type="text/javascript" src="../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="../js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
 
   <script type="text/javascript">
     function showHideSideBar() {
@@ -29,10 +34,16 @@
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
   </script>
 
+  <style>
+  div.left{float:left; width:45%;}
+  div.right{float:left; width:45%; margin-left: 10%}
+
+</style>
+
 </head>
 
 <body>       
-   <!-- Nav Menu -->
+  <!-- Nav Menu -->
 
   <div class="nav-menu" style="background-color: #f2f2f2" >
 
@@ -40,7 +51,7 @@
     <button style="border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a href="index.html" class="ti-home gradient-fill ti-3x mr-3"></a></button> 
     <b id="date" value="getDate"  style="color:white"></b>
     <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-settings gradient-fill ti-3x mr-3" href="settings.html"></a></button> 
-    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-bell gradient-fill ti-3x mr-3"></a></button> 
+    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-info gradient-fill ti-3x mr-3" href="info.html"></a></button> 
   </div>
 
   <!-- Side Bar -->
@@ -60,9 +71,6 @@
         <a class="nav-link" href="garden.html"><i class="fa fa-leaf gradient-fill"></i>  Garden</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="alarms.html"><span class="ti-bell"></span>  Alarms</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="cameras.html"><span class="ti-video-camera"></span>  Security Cameras</a>
       </li>
       <li class="nav-item">
@@ -77,80 +85,66 @@
       <li class="nav-item">
         <a class="nav-link" href="settings.html"><span class="ti-settings"></span>  Settings</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="info.html"><span class="ti-info"></span>  Informations</a>
+      </li>
     </ul>
   </nav>
 
-   <!-- Content -->
+  <!-- Content -->
 
   <div class="container" style="margin-top: 2%; font-size: large;">
 
-    <h3 style="margin-left: 2%">Lights Control</h3>
-    <div class="d-flex flex-column flex-lg-row" style="margin-top: 3%; margin-bottom: 3%; margin-left:2%;">        
-     <div class="d-flex flex-column flex-lg-row">
-          <p style="font-size: large;">All Lights &nbsp;&nbsp;</p>
+    <h3 style="margin-left: 3%; margin-bottom: 2%">Lights Control</h3> 
+    <div class="card-deck">
+      <div class="card pricing popular" style="margin-left: 4%">      
+       <div class="card-head" style="text-align: left; margin-left: 5%">
+        <div class="d-flex flex-column flex-lg-row">
+          <h4 class="text-primary" style="font-size: x-large;">All Lights &nbsp;&nbsp;</h4>
           <label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
           </label> 
         </div>
-
-    </div>
-
-     <div class="d-flex flex-column flex-lg-row">
-          <div class="form-group col-lg-5">
-            <label for="exampleFormControlSelect2">List of Lights</label>
-            <select multiple class="form-control" id="exampleFormControlSelect2">
-              <option>Kitchen Light</option>
-              <option>Living Room Light</option>
-              <option>Bedroom Suite Light</option>
-              <option>Bedroom Kids Light</option>
-              <option>WC Light</option>
-              <option>Outside Light</option>
-              </select>
-
-           <div class="d-flex flex-column flex-lg-row">
-          <p style="font-size: large;">On/Off selected &nbsp;&nbsp;</p>
-          <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-          </label> 
-        </div>
-
-            <p style="font-size: large;">Status &nbsp;&nbsp;</p>
+        <div class="left" style="margin-top: 3%">
+          <h4 class="text-primary" style="font-size: x-large;">List of all House Lights</h4>
+          <select size="8" multiple class="form-control" id="exampleFormControlSelect2">
+            <option>Kitchen Light</option>
+            <option>Living Room Light</option>
+            <option>Bedroom Suite Light</option>
+            <option>Bedroom Kids Light</option>
+            <option>WC Light</option>
+            <option>Outside Light</option>
+          </select>
+          <div class="d-flex flex-column flex-lg-row" style="margin-top: 3%">
+            <h4 class="text-primary" style="font-size: x-large;">On/Off Selected &nbsp;&nbsp;</h4>
             <label class="switch">
               <input type="checkbox">
               <span class="slider round"></span>
-            </label>
-
-            <p style="font-size: large;">Mode &nbsp;&nbsp;</p>
-            <div class="form-check d-flex flex-column flex-lg-row">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-              <label class="form-check-label" for="exampleRadios1">
-                Normal
-              </label>
-            </div>
-            <div class="form-check d-flex flex-column flex-lg-row">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-              <label class="form-check-label" for="exampleRadios2">
-                Warm
-              </label>
-            </div>
-            <div class="form-check d-flex flex-column flex-lg-row">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-              <label class="form-check-label" for="exampleRadios1">
-                Cold
-              </label>
-            </div>
-            <p style="font-size: large;">Intensity &nbsp;&nbsp;</p>
-            <input type="range" class="form-control-range">
+            </label> 
           </div>
 
-
-
         </div>
-
-
+        <div class="right" style="margin-top: 3%">
+          <h4 class="text-primary" style="font-size: x-large;">Mode &nbsp;&nbsp;</h4>
+          <div class="checkbox">
+                <label><input type="checkbox" value="">&nbsp;Normal</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" value="">&nbsp;Cold</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" value="">&nbsp;Warm</label>
+            </div>
+          <h4 class="text-primary" style="font-size: x-large; margin-top: 3%">Intensity of Light &nbsp;&nbsp;</h4>
+          <input type="range" class="form-control-range">
+        </div>
+      </div>
+    </div>
   </div>
+
+
+</div>
 
 </body>
 </html>

@@ -15,7 +15,7 @@
   <!-- Main css -->
   <link href="css/style.css" rel="stylesheet">
   <!-- Font Awesome -->
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   
 
   <!-- jQuery and Bootstrap -->
@@ -78,11 +78,15 @@
     });
 
   </script>
+  <style>
+  div.left{float:left; width:40%;}
+  div.right{float:left; width:55%; margin-left: 2%}
 
+</style>
 </head>
 
 <body>       
-   <!-- Nav Menu -->
+  <!-- Nav Menu -->
 
   <div class="nav-menu" style="background-color: #f2f2f2" >
 
@@ -90,7 +94,7 @@
     <button style="border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a href="index.html" class="ti-home gradient-fill ti-3x mr-3"></a></button> 
     <b id="date" value="getDate"  style="color:white"></b>
     <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-settings gradient-fill ti-3x mr-3" href="settings.html"></a></button> 
-    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-bell gradient-fill ti-3x mr-3"></a></button> 
+    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-info gradient-fill ti-3x mr-3" href="info.html"></a></button> 
   </div>
 
   <!-- Side Bar -->
@@ -110,9 +114,6 @@
         <a class="nav-link" href="garden.html"><i class="fa fa-leaf gradient-fill"></i>  Garden</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="alarms.html"><span class="ti-bell"></span>  Alarms</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="cameras.html"><span class="ti-video-camera"></span>  Security Cameras</a>
       </li>
       <li class="nav-item">
@@ -127,175 +128,162 @@
       <li class="nav-item">
         <a class="nav-link" href="settings.html"><span class="ti-settings"></span>  Settings</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="info.html"><span class="ti-info"></span>  Informations</a>
+      </li>
     </ul>
   </nav>
 
+
   <div class="container" style="margin-top: 2%">
     <h3 align="center">Garden</h3>
-    <ul class="nav nav-tabs nav-justified" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#lightsGarden">Lights</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#irrigation">Irrigation</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#doors">Doors</a>
-      </li>
-    </ul>
-
-    <div class="tab-content">
-      <!-- Tab Page -->
-
-      <div class="tab-pane fade show active" id="lightsGarden">
-        <h5>Garden's Lights Control</h5>
-        <div class="d-flex flex-column flex-lg-row">
-          <p style="font-size: large;">All Lights &nbsp;&nbsp;</p>
-          <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-          </label> 
-        </div>
-
-        <div class="d-flex flex-column flex-lg-row">
-          <div class="form-group col-lg-5">
-            <label for="exampleFormControlSelect2">List of Lights</label>
-            <select multiple class="form-control" id="exampleFormControlSelect2">
-              <option>Entrace Gate Light</option>
-              <option>Garage Gate Light</option>
-              <option>Barbecue Light</option>
-              <option>Entrace Door Light</option>
-            </select>
-
-            <p style="font-size: large;">Status &nbsp;&nbsp;</p>
+    <div class="card-deck">
+      <div class="card pricing popular">
+        <div class="card-head">
+          <h5 style="margin-bottom: 10%">Garden's Lights Control</h5>
+          <p></p>
+          <div class="d-flex flex-column flex-lg-row" style="margin-left: 9%">
+            <h4 class="text-primary" style="font-size: x-large;">All Lights On/Off&nbsp;&nbsp;</h4>
             <label class="switch">
               <input type="checkbox">
               <span class="slider round"></span>
-            </label>
-
-            <p style="font-size: large;">Mode &nbsp;&nbsp;</p>
-            <div class="form-check d-flex flex-column flex-lg-row">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-              <label class="form-check-label" for="exampleRadios1">
-                Normal
-              </label>
-            </div>
-            <div class="form-check d-flex flex-column flex-lg-row">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-              <label class="form-check-label" for="exampleRadios2">
-                Warm
-              </label>
-            </div>
-            <div class="form-check d-flex flex-column flex-lg-row">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-              <label class="form-check-label" for="exampleRadios1">
-                Cold
-              </label>
-            </div>
-            <p style="font-size: large;">Intensity &nbsp;&nbsp;</p>
-            <input type="range" class="form-control-range">
+            </label> 
           </div>
-
-
-
+          <div class="d-flex flex-column flex-lg-row" style="margin-left: 5%" align="left">
+            <div class="form-group col-lg-12">
+              <h4 class="text-primary" style="font-size: x-large;">List of Garden Lights&nbsp;&nbsp;</h4>
+              <select multiple class="form-control" id="exampleFormControlSelect2">
+                <option>Entrace Gate Light</option>
+                <option>Garage Gate Light</option>
+                <option>Barbecue Light</option>
+                <option>Entrace Door Light</option>
+              </select>
+              <div class="d-flex flex-column flex-lg-row" style="margin-top: 2%">
+                <h4 class="text-primary" style="font-size: x-large;">On/Off Selected&nbsp;&nbsp;</h4>
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+              </div>
+              <div class="d-flex flex-column flex-lg-row">
+                <h4 class="text-primary" style="font-size: x-large;">Mode&nbsp;&nbsp;</h4>
+                <div class="container" style="float: left; text-align: left">
+                  <div class="checkbox">
+                      <label><input type="checkbox" value="">&nbsp;Normal</label>
+                  </div>
+                  <div class="checkbox">
+                      <label><input type="checkbox" value="">&nbsp;Cold</label>
+                  </div>
+                  <div class="checkbox">
+                      <label><input type="checkbox" value="">&nbsp;Warm</label>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex flex-column flex-lg-row">
+                <h4 class="text-primary" style="font-size: x-large;">Intensity&nbsp;&nbsp;</h4>
+                <input type="range" class="form-control-range">
+              </div>
+            </div>
+          </div>
         </div>
-
       </div>
-
-      <!-- Tab Page -->
-      <div class="tab-pane fade" id="irrigation">
-        <h5>Irrigation Control</h5>
-        <div class="d-flex flex-column flex-lg-row">        
-          <p style="font-size: large;">On/Off &nbsp;&nbsp;</p>
+      <div class="card pricing popular">
+        <div class="card-head" align="left" style="text-align: left;">
+          <h5 align="center" style="margin-bottom: 10%">Irrigation Control</h5>
+          <div class="d-flex flex-column flex-lg-row">
+          <h4 class="text-primary" style=" font-size: x-large; float: left; margin-left:5%">On/Off &nbsp;&nbsp;</h4>
           <label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
           </label>
         </div>
         <div class="d-flex flex-column flex-lg-row">
-          <p style="font-size: large;">Automatic Irrigation &nbsp;&nbsp;</p>
+          <h4 class="text-primary" style=" font-size: x-large; float: left; margin-left: 5%">Automation &nbsp;&nbsp;</h4>
           <label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
           </label>
         </div>
-        <div class="d-flex flex-column flex-lg-row">
-          <div class="checkbox">
-              <label><input type="checkbox" value="">&nbsp;Monday</label>
-          </div>
-          <div class="checkbox">
-              <label><input type="checkbox" value="">&nbsp;Tuesday</label>
-          </div>
-          <div class="checkbox">
-              <label><input type="checkbox" value="">&nbsp;Wednesday</label>
-          </div>
-          <div class="checkbox">
-              <label><input type="checkbox" value="">&nbsp;Thursday</label>
-          </div>
-          <div class="checkbox">
-              <label><input type="checkbox" value="">&nbsp;Friday</label>
-          </div>
-
-          <div class="checkbox">
-              <label><input type="checkbox" value="">&nbsp;Saturday</label>
-          </div> 
-          <div class="checkbox">
-              <label><input type="checkbox" value="">&nbsp;Sunday</label>
-          </div> 
-        </div>
-
-
-        <div class="d-flex flex-column flex-lg-row">
-          <fieldset>
-            <div class="form-group">
-              <p>Start Time</p>
-              <div class="input-group date form_time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
-                <input class="form-control" type="time">
-                <span class="input-group-addon"><span class="ti ti-time"></span></span>
-              </div>
-
-              <p>End Time</p>
-              <div class="input-group date form_time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
-                <input class="form-control" type="time" >
-                <span class="input-group-addon"><span class="ti ti-time"></span></span>
-              </div>
-              <input type="hidden" id="dtp_input3" value="" /><br/>
+        <div class="left" align="left" style="width: 33%; float: left; margin-top: 5%; margin-left: 5%">
+            <div class="checkbox">
+                <label><input type="checkbox" value="">&nbsp;Monday</label>
             </div>
-          </fieldset>
+            <div class="checkbox">
+                <label><input type="checkbox" value="">&nbsp;Tuesday</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" value="">&nbsp;Wednesday</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" value="">&nbsp;Thursday</label>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" value="">&nbsp;Friday</label>
+            </div>
 
+            <div class="checkbox">
+                <label><input type="checkbox" value="">&nbsp;Saturday</label>
+            </div> 
+            <div class="checkbox">
+                <label><input type="checkbox" value="">&nbsp;Sunday</label>
+            </div> 
+          </div>
+          <div class="right" style="width: 45%; margin-top: 5%; margin-left: 5%" >
+            <fieldset>
+              <div class="form-group">
+                <p>Start Time</p>
+                <div class="input-group date form_time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
+                  <input class="form-control" type="time">
+                  <span class="input-group-addon"><span class="ti ti-time"></span></span>
+                </div>
+                <p>&nbsp;</p>
+                <p>End Time</p>
+                <div class="input-group date form_time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
+                  <input class="form-control" type="time" >
+                  <span class="input-group-addon"><span class="ti ti-time"></span></span>
+                </div>
+                <input type="hidden" id="dtp_input3" value="" /><br/>
+              </div>
+            </fieldset>
+          </div>
         </div>
       </div>
-
-
-
-
-      <div class="tab-pane fade" id="doors">
-        <h5>Doors Control</h5>
-        <div class="d-flex flex-column flex-lg-row" style="margin-top: 1%; margin-bottom: 1%">        
-          <p style="font-size: large;">All Doors &nbsp;&nbsp;</p>
-          <button onclick="showAlert()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-lock gradient-fill ti-3x mr-3"></span>Lock</button> 
-          <button onclick="showAlertUnlock()" style="border: none;" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-unlock gradient-fill ti-3x mr-3"></span>Unlock</button> 
-          <div id="lockInfo" class="alert alert-success" role="alert" style="margin-left: 4%; display: none">
-            <strong>Success! </strong>All doors are locked!
-            <a data-dismiss="alert"><span class=ti-close></span></a>
+      <div class="card pricing popular">
+        <div class="card-head">
+          <h5 style="margin-bottom: 10%">Doors Control</h5>
+          <div class="d-flex flex-column flex-lg-row" style="margin-top: 1%; margin-bottom: 1%; margin-left: 5%">    
+            <h4 class="text-primary" style="font-size: x-large;">All Doors &nbsp;&nbsp;</h4>
+            <button onclick="showAlert()" style="border: none; text-align: center;" class="btn btn-sm"><span class="ti-unlock gradient-fill ti-2x mr-2"></span></button>           
+            <button onclick="showAlertUnlock()" style="border: none;" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-unlock gradient-fill ti-2x mr-2"></span></button> 
           </div>
-          <div id="unlockInfo" class="alert alert-warning" role="alert" style="margin-left: 4%; display: none">
-            <strong>Warning! </strong>All doors are unlocked!
-            <a data-dismiss="alert"><span class=ti-close></span></a>
+            <div id="lockInfo" class="alert alert-success" role="alert" style="margin-left: 5%; margin-top: 2%; display: none">
+              <strong>Success! </strong>All doors are locked!
+              <a data-dismiss="alert"><span class=ti-close></span></a>
+            </div>
+            <div id="unlockInfo" class="alert alert-warning" role="alert" style="margin-left: 4%; display: none">
+              <strong>Warning! </strong>All doors are unlocked!
+              <a data-dismiss="alert"><span class=ti-close></span></a>
+            </div>
+          <div class="form-group col-lg-11" style="margin-top: 10%">
+            <h4 class="text-primary" align="left" style="font-size: x-large;">List of all Doors &nbsp;&nbsp;</h4>
+            <select multiple class="form-control" id="exampleFormControlSelect2">
+              <option>Entrace Gate</option>
+              <option>Garage Gate</option>
+              <option>Entrace Door</option>
+            </select>
+          </div>
+          <div class="d-flex flex-column flex-lg-row" style="margin-top: 1%; margin-bottom: 1%; margin-left: 5%">    
+            <h4 class="text-primary" style="font-size: x-large;">Selected&nbsp;&nbsp;</h4>
+            <button style="border: none; text-align: center;" class="btn btn-sm"><span class="ti-unlock gradient-fill ti-2x mr-2"></span></button>           
+            <button style="border: none;" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-unlock gradient-fill ti-2x mr-2"></span></button> 
           </div>
         </div>
-        <div class="form-group col-lg-7">
-          <label for="exampleFormControlSelect2">List of Doors</label>
-          <select multiple class="form-control" id="exampleFormControlSelect2">
-            <option>Entrace Gate</option>
-            <option>Garage Gate</option>
-            <option>Entrace Door</option>
-          </select>
         </div>
       </div>
     </div>
-
-
   </div>
+
+
+</div>
 </body>
 </html>

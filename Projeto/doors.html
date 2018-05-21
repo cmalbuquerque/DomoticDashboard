@@ -19,6 +19,12 @@
   <script src="bootstrap-auto-dismiss-alert.js"></script>
   <script src="js/owl.carousel.min.js"></script>
 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+
   <script type="text/javascript">
     function showHideSideBar() {
       var x = document.getElementById("sideBar");
@@ -49,16 +55,24 @@
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
   </script>
 
+ <style>
+  div.left{float:left; width:45%;}
+  div.right{float:left; width:45%; margin-left: 2%}
+
+</style>
+
 </head>
 
 <body>       
-  <!-- Nav Menu -->
+    <!-- Nav Menu -->
 
-  <div class="nav-menu" style="background-color: #f2f2f2">
+  <div class="nav-menu" style="background-color: #f2f2f2" >
+
     <button onclick="showHideSideBar()" style="border: none" class="btn btn-outline-light my-3 my-sm-0 ml-lg-3"><span class="ti-menu gradient-fill ti-3x mr-3"></span></button>
     <button style="border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a href="index.html" class="ti-home gradient-fill ti-3x mr-3"></a></button> 
+    <b id="date" value="getDate"  style="color:white"></b>
     <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-settings gradient-fill ti-3x mr-3" href="settings.html"></a></button> 
-    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-bell gradient-fill ti-3x mr-3"></a></button> 
+    <button style="float: right; border: none; background-color: #f2f2f2" class="btn my-3 my-sm-0 ml-lg-3"><a class="ti-info gradient-fill ti-3x mr-3" href="info.html"></a></button> 
   </div>
 
   <!-- Side Bar -->
@@ -72,13 +86,10 @@
         <a class="nav-link" href="lights.html"><span class="ti-light-bulb"></span>  Lights Control</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="climate.html"><span class="ti-light-bulb"></span>  Climate Control</a>
+        <a class="nav-link" href="climate.html"><i class="fa fa-thermometer-half gradient-fill"></i>  Climate Control</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="garden.html"><span class="ti-stats-up"></span>  Garden</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="alarms.html"><span class="ti-bell"></span>  Alarms</a>
+        <a class="nav-link" href="garden.html"><i class="fa fa-leaf gradient-fill"></i>  Garden</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="cameras.html"><span class="ti-video-camera"></span>  Security Cameras</a>
@@ -94,6 +105,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="settings.html"><span class="ti-settings"></span>  Settings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="info.html"><span class="ti-info"></span>  Informations</a>
       </li>
     </ul>
   </nav>
@@ -132,19 +146,19 @@
             <th scope="row">Entrace</th>
             <td>8:23</td>
             <td id="statusEntrace">Unlocked</td>
-            <td><span class="ti-lock"></span></td>
+            <td><button style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-lock gradient-fill ti-3x mr-3"></span>Lock</button></td>
           </tr>
           <tr>
             <th scope="row">Garage Gate</th>
             <td>9:10</td>
             <td>Locked</td>
-            <td><span class="ti-unlock"></span></td>
+            <td><button style="border: none;" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-unlock gradient-fill ti-3x mr-3"></span>Unlock</button> </td>
           </tr>
           <tr>
             <th scope="row">Entrace Gate</th>
             <td>9:10</td>
             <td>Locked</td>
-            <td><span class="ti-unlock"></span></td>
+            <td><button style="border: none;" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-unlock gradient-fill ti-3x mr-3"></span>Unlock</button> </td>
           </tr>
         </tbody>
       </table>
