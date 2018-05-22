@@ -23,6 +23,46 @@
   <script src="js/owl.carousel.min.js"></script>
 
   <script type="text/javascript">
+
+    function downBedKids(){
+      $("#statusBedRoomKids").text("Down");
+    }
+    function upBedKids(){
+      $("#statusBedRoomKids").text("Up");
+    }
+    function downBedSuite(){
+      $("#statusBedSuite").text("Down");
+    }
+    function upBedSuite(){
+      $("#statusBedSuite").text("Up");
+    }
+    function downLiving(){
+      $("#statusLiving").text("Down");
+    }
+    function upLiving(){
+      $("#statusLiving").text("Up");
+    }
+    function downKitchen(){
+      $("#statusKitchen").text("Down");
+    }
+    function upKitchen(){
+      $("#statusKitchen").text("Up");
+    }
+    function downAll(){
+      downKitchen();
+      downLiving();
+      downBedSuite();
+      downBedKids();
+    }
+
+    function upAll(){
+      upBedSuite();
+      upKitchen();
+      upLiving();
+      upBedKids();
+    }
+
+
     function showHideSideBar() {
       var x = document.getElementById("sideBar");
       if (x.style.display === "none") {
@@ -101,30 +141,46 @@
         <div class="card pricing popular">
           <div class="card-head">
             <h4 class="text-primary" style=" font-size: x-large; float: left; margin-left: 5%">All Blinds Up/Down</h4>
-            <label class="switch">
-              <input type="checkbox">
-              <span class="slider round"></span>
-            </label>
+            <button style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3" onclick="upAll()"><span class="ti-angle-up gradient-fill ti-2x mr-3"></span></button><button onclick="downAll()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-angle-down gradient-fill ti-2x mr-3"></span></button>
             <br></br>
-            <h4 class="text-primary" style=" font-size: x-large; float: left; margin-left: 5%">List of all rooms</h4>
-            <select multiple class="form-control" id="exampleFormControlSelect2" size="5" style="width: 90%; margin-left: 5%">
-              <option>Kitchen Blind</option>
-              <option>Living Room Blind</option>
-              <option>Bedroom Suite Blind</option>
-              <option>Bedroom Kids Blind</option>
-              <option>Entrance Blind</option>
-            </select>
+            <table class="table" style="margin-left: 1%">
+              <thead>
+                <tr>
+                  <th scope="col">Room</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Up/Down</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Bedroom Kids</th>
+                  <td id="statusBedRoomKids">Down</td>
+                  <td><button style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3" id="upBedKids" onclick="upBedKids()"><span class="ti-angle-up gradient-fill ti-2x mr-3"></span></button><button id="downBedKids" onclick="downBedKids()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-angle-down gradient-fill ti-2x mr-3"></span></button></td>
+                </tr>
+                <tr>
+                  <th scope="row">Bedroom Suite</th>
+                  <td id="statusBedSuite">Up</td>
+                  <td><button onclick="upBedSuite()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3" id="upBedSuite"><span class="ti-angle-up gradient-fill ti-2x mr-3"></span></button><button id="downBedSuite" onclick="downBedSuite()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-angle-down gradient-fill ti-2x mr-3"></span></button></td>
+                </tr>
+                <tr>
+                  <th scope="row">Living Room</th>
+                  <td id="statusLiving">Up</td>
+                  <td><button onclick="upLiving()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3" id="upLiving"><span class="ti-angle-up gradient-fill ti-2x mr-3"></span></button><button id="downLiving" onclick="downLiving()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-angle-down gradient-fill ti-2x mr-3"></span></button></td>
+                </tr>
+                <tr>
+                  <th scope="row">Kitchen</th>
+                  <td id="statusKitchen">Down</td>
+                  <td><button onclick="upKitchen()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3" id="upKitchen"><span class="ti-angle-up gradient-fill ti-2x mr-3"></span></button><button id="downKitchen" onclick="downKitchen()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-angle-down gradient-fill ti-2x mr-3"></span></button></td>
+                </tr>
+              </tbody>
+            </table>
             <p></p>
-            <h4 class="text-primary" style=" font-size: x-large; float: left; margin-left: 5%">Up/Down Selected Room</h4>
-            <label class="switch">
-              <input type="checkbox">
-              <span class="slider round"></span>
-            </label>
           </div>
+         
         </div>
         <div class="card pricing popular">
           <div class="card-head">
-            <h4 class="text-primary" style=" font-size: x-large; float: left; margin-left: 5%">Blinds Auntomation</h4>
+            <h4 class="text-primary" style=" font-size: x-large; float: left; margin-left: 5%">Blinds Automation</h4>
             <label class="switch">
               <input type="checkbox">
               <span class="slider round"></span>
@@ -132,7 +188,7 @@
             
 
             <div class="left" style="text-align: left; margin-top: 2%;">
-              <h4 class="text-primary" align="left" style="margin-left: -10%">Up Blinds</h4>
+              <h4 class="text-primary" align="left" style="margin-left: 8%">Up Blinds</h4>
               <div class="row">
                 <div class="checkbox" style="margin-left: 10%">
                     <label><input type="checkbox" value="">&nbsp;Morning&nbsp;&nbsp;&nbsp;</label>
@@ -159,7 +215,7 @@
                   </div>
                   <div class="row">
                     <div class="checkbox" style="margin-left: 10%">
-                        <label><input type="checkbox" value="">&nbsp;Night&nbsp;&nbsp;&nbsp;</label>
+                        <label><input type="checkbox" value="">&nbsp;Night&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                     </div>
                     <fieldset>
                       <div class="form-group" align="right">
@@ -171,7 +227,7 @@
                     </div>
                   </div>
                   <div class="right" style="margin-top: 2%;">
-                    <h4 class="text-primary" align="left" style="margin-left: -10%">Down Blinds</h4>
+                    <h4 class="text-primary" align="left" style="margin-left: 4%">Down Blinds</h4>
                     <div class="row">
                       <div class="checkbox" style="margin-left: 10%">
                           <label><input type="checkbox" value="">&nbsp;Morning&nbsp;&nbsp;&nbsp;</label>
@@ -199,7 +255,7 @@
                       </div>
                       <div class="row">
                         <div class="checkbox" style="margin-left: 10%">
-                            <label><input type="checkbox" value="">&nbsp;Night&nbsp;&nbsp;&nbsp;</label>
+                           <label><input type="checkbox" value="">&nbsp;Night&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                         </div>
                         <fieldset>
                           <div class="form-group" align="right">
@@ -213,8 +269,8 @@
                     </div>
                   </div> 
                   <div class="card-body" style="margin-top: -5%">
-              <a href="#" class="btn btn-primary btn-lg btn-block"><i class="fa fa-check"></i>&nbsp;&nbsp;Save Changes</a>
-            </div> 
+                    <a href="#" class="btn btn-primary btn-lg btn-block"><i class="fa fa-check"></i>&nbsp;&nbsp;Save Changes</a>
+                  </div> 
                 </div>
               </div> 
             </div>

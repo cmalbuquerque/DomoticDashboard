@@ -31,6 +31,73 @@
         x.style.display = "none";
       }
     } 
+
+    function allLights(){
+      var teste = document.getElementById("allButton").value;
+      if(teste == "Off"){
+        document.getElementById("statusBedRoomKids").innerHTML = "On";
+        document.getElementById("statusBedSuite").innerHTML = "On";
+        document.getElementById("statusBedSuite").innerHTML = "On";
+        document.getElementById("statusEntrace").innerHTML = "On";
+        document.getElementById("statusKitchen").innerHTML = "On";
+        document.getElementById("statusLiving").innerHTML = "On";
+        document.getElementById("allButton").value = "On";
+      } else{
+        document.getElementById("statusBedRoomKids").innerHTML = "Off";
+        document.getElementById("statusBedSuite").innerHTML = "Off";
+        document.getElementById("statusBedSuite").innerHTML = "Off";
+        document.getElementById("statusEntrace").innerHTML = "Off";
+        document.getElementById("statusLiving").innerHTML = "Off";
+        document.getElementById("statusKitchen").innerHTML = "Off";
+        document.getElementById("allButton").value = "Off";
+      }
+    }
+
+    function lightBedKids(){
+      var teste = document.getElementById("statusBedRoomKids").innerHTML;
+      if(teste =="On"){
+        document.getElementById("statusBedRoomKids").innerHTML = "Off";
+      } else{
+        document.getElementById("statusBedRoomKids").innerHTML = "On";
+      }
+    }
+
+    function lightBedSuite(){
+      var teste = document.getElementById("statusBedSuite").innerHTML;
+      if(teste =="On"){
+        document.getElementById("statusBedSuite").innerHTML = "Off";
+      } else{
+        document.getElementById("statusBedSuite").innerHTML = "On";
+      }
+    }
+
+    function lightLiving(){
+      var teste = document.getElementById("statusLiving").innerHTML;
+      if(teste =="On"){
+        document.getElementById("statusLiving").innerHTML = "Off";
+      } else{
+        document.getElementById("statusBedSuite").innerHTML = "On";
+      }
+    }
+
+    function lightEntrace(){
+      var teste = document.getElementById("statusEntrace").innerHTML;
+      if(teste =="On"){
+        document.getElementById("statusEntrace").innerHTML = "Off";
+      } else{
+        document.getElementById("statusEntrace").innerHTML = "On";
+      }
+    }
+
+    function lightKitchen(){
+      var teste = document.getElementById("statusKitchen").innerHTML;
+      if(teste =="On"){
+        document.getElementById("statusKitchen").innerHTML = "Off";
+      } else{
+        document.getElementById("statusKitchen").innerHTML = "On";
+      }
+    }
+
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
   </script>
 
@@ -101,29 +168,47 @@
        <div class="card-head" style="text-align: left; margin-left: 5%">
         <div class="d-flex flex-column flex-lg-row">
           <h4 class="text-primary" style="font-size: x-large;">All Lights &nbsp;&nbsp;</h4>
-          <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-          </label> 
+          <button value="Off" id="allButton" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3" onclick="allLights()"><span class="ti-power-off gradient-fill ti-2x mr-3"></span></button>
         </div>
         <div class="left" style="margin-top: 3%">
-          <h4 class="text-primary" style="font-size: x-large;">List of all House Lights</h4>
-          <select size="8" multiple class="form-control" id="exampleFormControlSelect2">
-            <option>Kitchen Light</option>
-            <option>Living Room Light</option>
-            <option>Bedroom Suite Light</option>
-            <option>Bedroom Kids Light</option>
-            <option>WC Light</option>
-            <option>Outside Light</option>
-          </select>
-          <div class="d-flex flex-column flex-lg-row" style="margin-top: 3%">
-            <h4 class="text-primary" style="font-size: x-large;">On/Off Selected &nbsp;&nbsp;</h4>
-            <label class="switch">
-              <input type="checkbox">
-              <span class="slider round"></span>
-            </label> 
-          </div>
-
+          <table class="table" style="margin-left: 1%">
+              <thead>
+                <tr>
+                  <th scope="col">Room</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Up/Down</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Entrace</th>
+                  <td id="statusEntrace">Off</td>
+                  <td><button style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3" onclick="lightEntrace()"><span class="ti-power-off gradient-fill ti-2x mr-3"></span></button></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">Bedroom Kids</th>
+                  <td id="statusBedRoomKids">On</td>
+                  <td><button style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3" onclick="lightBedKids()"><span class="ti-power-off gradient-fill ti-2x mr-3"></span></button></td>
+                </tr>
+                <tr>
+                  <th scope="row">Bedroom Suite</th>
+                  <td id="statusBedSuite">On</td>
+                  <td><button style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3" onclick="lightBedSuite()"><span class="ti-power-off gradient-fill ti-2x mr-3"></span></button></td>
+                </tr>
+                <tr>
+                  <th scope="row">Living Room</th>
+                  <td id="statusLiving">Off</td>
+                  <td><button style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3" onclick="lightLiving()"><span class="ti-power-off gradient-fill ti-2x mr-3"></span></button></td>
+                </tr>
+                <tr>
+                  <th scope="row">Kitchen</th>
+                  <td id="statusKitchen">Off</td>
+                  <td><button style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3" onclick="lightKitchen()"><span class="ti-power-off gradient-fill ti-2x mr-3"></span></button></td>
+                </tr>
+              </tbody>
+            </table>
+          
         </div>
         <div class="right" style="margin-top: 3%">
           <h4 class="text-primary" style="font-size: x-large;">Mode &nbsp;&nbsp;</h4>

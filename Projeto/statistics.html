@@ -26,25 +26,25 @@
 
       var data = new google.visualization.DataTable();
       data.addColumn('number', 'Day');
-      data.addColumn('number', 'Water');
-      data.addColumn('number', 'Eletricity');
+      data.addColumn('number', 'Water (m3)');
+      data.addColumn('number', 'Eletricity (kWh) ');
       // data.addColumn('number', 'Transformers: Age of Extinction');
 
       data.addRows([
-        [1,  37.8, 80.8],
-        [2,  30.9, 69.5],
-        [3,  25.4,   57],
-        [4,  11.7, 18.8],
+        [1,  37.8, 40.8],
+        [2,  30.9, 50.5],
+        [3,  25.4,   26],
+        [4,  11.7, 20.8],
         [5,  11.9, 17.6],
-        [6,   8.8, 13.6],
-        [7,   7.6, 12.3],
+        [6,   8.8, 23.6],
+        [7,   7.6, 31.3],
         [8,  12.3, 29.2],
         [9,  16.9, 42.9],
-        [10, 12.8, 30.9],
+        [10, 12.8, 39.9],
         [11,  10.3,  31.9],
         [12,  13.6,  20.4],
-        [13,  16.8,  6.3],
-        [14,  8.2,  9.2]
+        [13,  16.8,  10.3],
+        [14,  8.2,  19.2]
       ]);
 
       var options = {
@@ -55,7 +55,7 @@
         height: 480
       };
 
-      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+      var chart = new google.charts.Line(document.getElementById('linechart_materialEletricity'));
 
       chart.draw(data, google.charts.Line.convertOptions(options));
     }
@@ -134,9 +134,9 @@
     <h3 style="margin-left: 2%">Consumes</h3>
 
 
-   <div id="linechart_material" style="margin-left: 2%"></div>
-
-
+  <div id="linechart_materialEletricity" style="margin-left: 2%"></div>
+  </div>
+    <div id="linechart_materialWater" style="margin-left: 2%"></div>
   </div>
 
 
