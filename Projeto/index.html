@@ -44,6 +44,8 @@
         document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
       }
 
+
+
     </script>
 
     <style>
@@ -109,16 +111,15 @@
 
   <!-- Content -->
 
-  <div class="container" style="margin-top: 2%;">   
+  <div class="container" style="margin-top: 2%">   
     <!-- The Modal -->
     <div class="modal" id="myModal" style="margin-top: 10%">
       <div class="modal-dialog">
         <div class="modal-content">
           <!-- Modal body -->
           <div class="modal-body" style="text-align: center">
-            <h3>Alarm is on</h3>
-            <p>Enter de PIN code to turn off the alarm</p>
-            <!-- <p><input type="password" pattern="[0-9]*" inputmode="numeric"></p> -->
+            <h3>Alarm</h3>
+            <p id="onAlarm">Enter de PIN code to turn ON/OFF the alarm</p>
             <div class="btn-group-vertical" role="group" aria-label="Basic example">
               <div class="btn-group" >
                 <button type="button" class="btn btn-secondary btn-lg border-bottom-0 rounded-0">1</button>
@@ -141,7 +142,8 @@
                 <button type="button" class="btn btn-secondary btn-lg rounded-0" disabled=""></button>
               </div>
             </div></p>
-            <button style="margin-top: 1%" type="button" class="btn btn-primary btn-lg" data-dismiss="modal"><span class="ti-power-off"></span>&nbsp;Turn Off</button>
+            <button id="OnButton" style="margin-top: 1%" type="button" class="btn btn-primary btn-lg" data-dismiss="modal"><span class="ti-power-off"></span>&nbsp;Turn ON</button>
+            <button id="OffButton" style="margin-top: 1%;" type="button" class="btn btn-primary btn-lg" data-dismiss="modal"><span class="ti-power-off"></span>&nbsp;Turn OFF</button>
           </div>
         </div>
       </div>
@@ -166,15 +168,12 @@
         </div>
         <div class="col-12 col-lg-6">
           <div class="card features" style="margin-top: 2%">
-            <div class="card-body">
+            <div class="card-body" data-toggle="modal" data-target="#myModal" style="cursor: pointer;">
               <div class="media">
                 <span class="ti-bell gradient-fill ti-3x mr-3"></span>
                 <div class="media-body">
                   <h4 class="card-title">Alarms</h4>
-                  <!-- Button to Open the Modal -->
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                    <span class="ti-power-off"></span>&nbsp;Turn on/off
-                  </button>                                 
+                  <p class="card-text">Turn On/Off the house alarm through a Pin Code</p>                              
                 </div>
               </div>
             </div>
@@ -311,6 +310,7 @@
    </div>
  </div>
 </div>
+
 
 
 

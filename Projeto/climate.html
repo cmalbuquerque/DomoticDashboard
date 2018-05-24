@@ -70,7 +70,52 @@
         }
       }
       btn.closest('.number-spinner').find('input').val(newVal);
+      $("#tempSuite").text(newVal + "ºC");
+      $("#tempKitchen").text(newVal + "ºC");
+      $("#tempLivingRoom").text(newVal + "ºC");
+      $("#tempKidsRoom").text(newVal + "ºC");
+      $("#tempDinnigRoom").text(newVal + "ºC");
+      $("#tempBathroom").text(newVal + "ºC");
     });
+
+    $(document).on('click', '.spinner button', function () {    
+      var btn = $(this),
+      oldValue = btn.closest('.spinner').find('input').val().trim(),
+      newVal = 0;
+
+      if (btn.attr('data-dir') == 'up') {
+        newVal = parseInt(oldValue) + 1;
+      } else {
+        if (oldValue > 1) {
+          newVal = parseInt(oldValue) - 1;
+        } else {
+          newVal = 1;
+        }
+      }
+      btn.closest('.spinner').find('input').val(newVal);
+
+      var e=$("#selectRoom").val();
+      console.log(e);
+      if(e=="suite"){
+        $("#tempSuite").text(newVal + "ºC");
+      }
+      if(e=="kitchen"){
+        $("#tempKitchen").text(newVal + "ºC");
+      }
+      if(e=="living"){
+        $("#tempLivingRoom").text(newVal + "ºC");
+      }
+      if(e=="kids"){
+        $("#tempKidsRoom").text(newVal + "ºC");
+      }
+      if(e=="dinning"){
+        $("#tempDinnigRoom").text(newVal + "ºC");
+      }
+      if(e=="bath"){
+        $("#tempBathroom").text(newVal + "ºC");
+      }
+    });
+
   </script>
 
   <style>
@@ -130,84 +175,93 @@
 </nav>
 
 <div class="container" style="margin-top: 2%;">
-<h3 style="margin-bottom: 3%">Climate Control</h3>
+  <h3 style="margin-bottom: 3%">Climate Control</h3>
 
   <div class="card-deck">
     <div class="card pricing popular" style="margin-left: 4%">      
      <div class="card-head" style="text-align: left; margin-left: 5%">
       <div class="d-flex flex-column flex-lg-row">
-        <h4 class="text-primary" style="font-size: x-large;">List of all rooms &nbsp;&nbsp;</h4>
+        <h4 class="text-primary" style="font-size: x-large;">Room Temperature Information &nbsp;&nbsp;</h4>
       </div>
-    </div>
-  </div>
-      <div class="card pricing popular" style="margin-left: 4%">      
-     <div class="card-head" style="text-align: left; margin-left: 5%">
-      <div class="d-flex flex-column flex-lg-row">
-        <h4 class="text-primary" style="font-size: x-large;">Temperature for all rooms &nbsp;&nbsp;</h4>
-      </div>
-    </div>
+      <table class="table" style="margin-top: 3%; margin-left: 1%; width: 70%; text-align: center" >
+        <thead>
+          <tr>
+            <th style="text-align: left"  scope="col">Room</th>
+            <th scope="col">Temperature</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th style="text-align: left" scope="row">Bedroom Kids</th>
+            <td id="tempKidsRoom">22ºC</td>
+          </tr>
+          <tr>
+            <th style="text-align: left"  scope="row">Bedroom Suite</th>
+            <td id="tempSuite">18ºC</td>
+          </tr>
+          <tr>
+           <th style="text-align: left"  scope="row">Kitchen</th>
+           <td id="tempKitchen">17ºC</td>
+         </tr>
+         <tr>
+          <th style="text-align: left"  scope="row">Living Room</th>
+          <td id="tempLivingRoom">21ºC</td>
+        </tr>
+        <tr>
+          <th style="text-align: left"  scope="row">Dining Room</th>
+          <td id="tempDinnigRoom">21ºC</td>
+        </tr>
+        <tr>
+          <th style="text-align: left"  scope="row">Bathroom</th>
+          <td id="tempBathroom">21ºC</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
-
-
-
-<!------>
-
-<div class="right" style="margin-left: 3%">
-  <div class="row">
-    <h4 class="text-primary" style=" font-size: x-large; float: left;">List off all rooms</h4>
+<div class="card pricing popular" style="margin-left: 4%">      
+ <div class="card-head" style="text-align: left; margin-left: 5%">
+  <div class="d-flex flex-column flex-lg-row">
+    <h4 class="text-primary" style=" font-size: x-large; float: left; margin-left: 3%">Change Room Temperature</h4>
   </div>
-  <div class="row">
-    <select multiple class="form-control" size="10" style="font-size: large; width: 40%">
-      <option>Kitchen</option>
-      <option>Living Room</option>
-      <option>Dinning Room</option>
-      <option>Entrace</option>
-      <option>Bathroom 1st floor</option>
-      <option>Bathroom Kids</option>
-      <option>Bathroom Suite</option>
-      <option>Bedroom Kids</option>
-      <option>Suite</option>
-      <option>Office</option>
+  <div class="d-flex flex-column flex-lg-row" style="margin-top: 3%">
+    <select id="selectRoom" class="form-control" size="6" style="font-size: large; width: 40%">
+      <option value="kitchen" selected="selected">Kitchen</option>
+      <option value="living">Living Room</option>
+      <option value="dinning">Dinning Room</option>
+      <option value="bath">Bathroom</option>
+      <option value="kids">Bedroom Kids</option>
+      <option value="suite">Suite</option>
     </select>
-    <br></br>
-    <div class="input-group number-spinner" style="width: 40%; margin-left: 4%; font-size: xx-large;">
+    <div class="input-group spinner" style="height: 50%;width: 60%; margin-left: 4%; margin-right: 4%">
       <span class="input-group-btn">
-        <button style="font-size: xx-large;" class="btn btn-primary" data-dir="dwn"><span class="ti-minus"></span></button>
+        <button style="font-size: large;" class="btn btn-primary" data-dir="dwn"><span class="ti-minus"></span></button>
       </span>
-      <input style="font-size: xx-large;" type="text" class="form-control text-center" value="18">
+      <input style="font-size: x-large;" type="text" class="form-control text-center" value="18">
       <span class="input-group-btn">
-        <button style="font-size: xx-large;" class="btn btn-primary" data-dir="up"><span class="ti-plus"></span></button>
+        <button style="font-size: large;" class="btn btn-primary" data-dir="up"><span class="ti-plus"></span></button>
       </span>
     </div>
   </div>
-
-</div>
-
-<div class="left">
-  <div class="row">
-    <h4 class="text-primary" style=" font-size: x-large; float: left; margin-left: 3%">Temperature for all rooms</h4>
+  <div class="d-flex flex-column flex-lg-row" style="margin-top: 10%">
+    <h4 class="text-primary" style=" font-size: x-large; float: left; margin-left: 3%">Change Temperature for all Rooms</h4>
     <label class="switch" onchange="showHideallRoomsDiv()" style="margin-left: 3%">
       <input type="checkbox">
       <span class="slider round"></span>
     </label>
-    <br></br>
-    <div class="card pricing popular" id="allRoomsDiv" style="margin-left: 3%">
-      <div class="card-head">
-        <div class="input-group number-spinner" style="width: 80%; margin-left: 10%;">
-          <span class="input-group-btn">
-            <button  style="display: none;" id="defTempMinus" class="btn btn-default" data-dir="dwn"><span class="ti-minus"></span></button>
-          </span>
-          <input style="display: none;" id="inputTemp" type="text" class="form-control text-center" value="18">
-          <span class="input-group-btn">
-            <button  style="display: none;" id="defTempPlus" class="btn btn-default" data-dir="up"><span class="ti-plus"></span></button>
-          </span>
-        </div>
-      </div>
-    </div>
+  </div>
+  <div class="input-group number-spinner" style="width: 80%; margin-left: 10%; margin-top: 3%;">
+    <span class="input-group-btn">
+      <button id="defTempMinus" style="font-size: large; display: none" class="btn btn-primary" data-dir="dwn"><span class="ti-minus"></span></button>
+    </span>
+    <input id="inputTemp" style="font-size: x-large; display: none" type="text" class="form-control text-center" value="18">
+    <span class="input-group-btn">
+      <button id="defTempPlus" style="font-size: large; display: none" class="btn btn-primary" data-dir="up"><span class="ti-plus"></span></button>
+    </span>
   </div>
 </div>
-
+</div>
+</div>
 
 
 </div>

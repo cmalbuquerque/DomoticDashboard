@@ -19,10 +19,12 @@
   <script src="bootstrap-auto-dismiss-alert.js"></script>
   <script src="js/owl.carousel.min.js"></script>
 
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
 
 
   <script type="text/javascript">
@@ -74,25 +76,49 @@
     } 
 
     function lockEntrace(){
+      var timeNow = new Date();
+      var hours   = timeNow.getHours();
+      var minutes = timeNow.getMinutes();
+      $("#hourEntrace").text(hours+":"+minutes);
       $("#statusEntrace").text("Locked");
     }
+
     function unlockEntrace(){
+      var timeNow = new Date();
+      var hours   = timeNow.getHours();
+      var minutes = timeNow.getMinutes();
+      $("#hourEntrace").text(hours+":"+minutes);
       $("#statusEntrace").text("Unlocked");
     }
 
 
     function lockEntraceGate(){
+      var timeNow = new Date();
+      var hours   = timeNow.getHours();
+      var minutes = timeNow.getMinutes();
+      $("#hourEntraceGate").text(hours+":"+minutes);
       $("#statusEntraceGate").text("Locked");
     }
     function unlockEntraceGate(){
+      var timeNow = new Date();
+      var hours   = timeNow.getHours();
+      var minutes = timeNow.getMinutes();
+      $("#hourEntraceGate").text(hours+":"+minutes);
       $("#statusEntraceGate").text("Unlocked");
     }
 
 
     function lockGarage(){
+      var timeNow = new Date();
+      var hours   = timeNow.getHours();
+      var minutes = timeNow.getMinutes();
+      $("#hourGarage").text(hours+":"+minutes);
       $("#statusGarage").text("Locked");
     }
-    function unlockGarage(){
+    function unlockGarage(){var timeNow = new Date();
+      var hours   = timeNow.getHours();
+      var minutes = timeNow.getMinutes();
+      $("#hourGarage").text(hours+":"+minutes);
       $("#statusGarage").text("Unlocked");
     }
 
@@ -179,8 +205,8 @@
       <div class="card pricing popular">
         <div class="card-head">
           <p style="font-size: x-large;">All Doors &nbsp;&nbsp;
-            <button onclick="showAlert()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-lock gradient-fill ti-3x mr-3"></span>Lock</button> 
-            <button onclick="showAlertUnlock()" style="border: none;" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-unlock gradient-fill ti-3x mr-3"></span>Unlock</button> </p>
+            <button onclick="lockAll()" style="border: none; text-align: center" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-lock gradient-fill ti-3x mr-3"></span>Lock</button> 
+            <button onclick="unlockAll()" style="border: none;" class="btn my-3 my-sm-0 ml-lg-3"><span class="ti-unlock gradient-fill ti-3x mr-3"></span>Unlock</button> </p>
             <table class="table" style="margin-top: 3%">
               <thead>
                 <tr>
@@ -193,19 +219,19 @@
               <tbody>
                 <tr>
                   <th scope="row">Entrace</th>
-                  <td>8:23</td>
+                  <td id="hourEntrace">8:23</td>
                   <td id="statusEntrace">Unlocked</td>
                   <td><span onclick="lockEntrace()" style="cursor: pointer;" class="ti-lock gradient-fill ti-2x mr-3"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="cursor: pointer;" onclick="unlockEntrace()" class="ti-unlock gradient-fill ti-2x mr-3"></span></td>
                 </tr>
                 <tr>
                   <th scope="row">Garage Gate</th>
-                  <td>9:10</td>
+                  <td id="hourGarage">9:10</td>
                   <td id="statusGarage">Locked</td>
                   <td><span onclick="lockGarage()" style="cursor: pointer;" class="ti-lock gradient-fill ti-2x mr-3"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span onclick="unlockGarage()" style="cursor: pointer;" class="ti-unlock gradient-fill ti-2x mr-3"></span></td>
                 </tr>
                 <tr>
                   <th scope="row">Entrace Gate</th>
-                  <td>9:10</td>
+                  <td id="hourEntraceGate">9:10</td>
                   <td id="statusEntraceGate">Locked</td>
                   <td><span onclick="lockEntraceGate()" style="cursor: pointer;" class="ti-lock gradient-fill ti-2x mr-3"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span onclick="unlockEntraceGate()" style="cursor: pointer;" class="ti-unlock gradient-fill ti-2x mr-3"></span></td>
                 </tr>
