@@ -1,15 +1,18 @@
-# Domotic Dashboard Application
+<h1 align="center"> Domotic Dashboard Application</h1> <br>
+<p align="center">Dashboard application developed to control, manage and configure some aspects/tecnologies of our home. The aim of this project was to implement an application that was intuitive and easy to use for various types of users.</p>
 
+<p align="center">
+    <img src="resources/dashboard.png" height="400">
+</p>
 
-
-Dashboard application developed to control, manage and configure some aspects/tecnologies of our home. The aim of this project was to implement an application that was intuitive and easy to use for various types of users.
-
-This dashboard uses:
+## Technologies
 - Html & CSS
 - Javascript
 - Google Charts
 
-Demo available: https://cmalbuquerque.github.io/domotic-dashboard/
+## Demo
+
+Available: https://cmalbuquerque.github.io/domotic-dashboard/
 
 ## Authors
 
